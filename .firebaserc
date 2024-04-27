@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pps-apps-fd147": {
+      "hosting": {
+        "app": [
+          "pps-apps-fd147"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pps-apps-fd147"
+  }
+}

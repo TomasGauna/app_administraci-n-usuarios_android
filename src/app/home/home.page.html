@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true" class="container">
+  <ion-header >
+    <ion-toolbar style="text-align: center; --background: #5A454D; color: #756D54;">
+      <ion-title>ADMINISTRACION USUARIOS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <div class="container">
+    <div class="divLbl">
+      <label id="lblListado">LISTADO DE USUARIOS</label>
+    </div>
+    <ion-list lines="full" class="lista">
+      <ion-item style="text-align: center; font-size: 18px;" *ngFor="let usuario of usuarios">
+        <ion-label>{{usuario.apellidos}} {{usuario.nombres}} - {{usuario.DNI}}</ion-label>
+        <img width="50px" height="50px" src='{{usuario.foto}}'>
+      </ion-item>
+    </ion-list>
+  </div>
+  
+  <ion-fab vertical="bottom" horizontal="end" class="fab">
+    <ion-fab-button [disabled]="!esAdmin" routerLink="/alta" style="--background: #CEDF82;">
+      <img id="anadir" src="assets/anadir-amigo.png">
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" class="fab">
+    <ion-fab-button (click)="salir()" style="--background: #CEDF82; --color: black;">
+      <ion-icon style="font-size: 30px; font-weight: bold;" name="arrow-undo-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<div *ngIf="mostrarSpinner" class="spinner-container">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <img class="spinner image-spinner" src="assets/logo.png">
+  </div>
+</div>
+
+
+
+
+
+<!-- <ion-button 
+  expand="block"
+  class="ion-margin"
+  (click)="startScan()">ALGOOOOOOOOOOOOOOO
+  </ion-button> -->

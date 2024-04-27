@@ -1,0 +1,50 @@
+<ion-content class="container-gral">
+  <div class="py-5" id="image">
+    <img id="logo" src="assets/logo.png">
+  </div>
+
+  <div class="inputs">
+    <div>
+      <ion-icon style="font-size: 50px;" name="mail-outline"></ion-icon>
+      <ion-input type="email" [(ngModel)]="email" label="Correo electrónico" label-placement="floating" fill="outline" errorText="Correo electrónico inválido!" ngModel email></ion-input>
+    </div>
+    <div>
+      <ion-icon style="font-size: 50px;" name="key-outline"></ion-icon>
+      <ion-input type="password" [(ngModel)]="clave" label="Contraseña" label-placement="floating" fill="outline" errorText="Contraseña inválida!" ngModel [minlength]=6></ion-input>
+    </div>
+    <div class="btns">
+      <ion-button id="limpiar" fill="outline" (click)="ingresar()">Ingresar</ion-button>
+      <ion-button id="limpiar" fill="outline" (click)="limpiarCampos()">Limpiar</ion-button>
+    </div>
+  </div>
+
+  <div class="ion-padding">
+      <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+        <ion-fab-button>
+          <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="end">
+          <ion-fab-button (click)="email = 'admin@admin.com'; clave = '111111'">
+            A
+          </ion-fab-button>
+          <ion-fab-button (click)="email = 'invitado@invitado.com'; clave = '222222'">
+            I
+          </ion-fab-button>
+          <ion-fab-button (click)="email = 'usuario@usuario.com'; clave = '333333'">
+            U
+          </ion-fab-button>
+          <ion-fab-button (click)="email = 'anonimo@anonimo.com'; clave = '444444'">
+            An
+          </ion-fab-button>
+          <ion-fab-button (click)="email = 'tester@tester.com'; clave = '555555'">
+            T
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+  </div>
+
+<div *ngIf="mostrarSpinner" class="spinner-container">
+  <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <img class="spinner image-spinner" src="assets/logo.png">
+  </div>
+</div>
